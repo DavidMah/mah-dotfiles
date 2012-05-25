@@ -1,0 +1,36 @@
+# ~/.config/terminator/config needs to go to this file
+[global_config]
+  title_transmit_fg_color = "#000000"
+  title_transmit_bg_color = "#E8176E"
+  title_inactive_fg_color = "#000000"
+  title_inactive_bg_color = "#67C7DB"
+
+# Keybindings
+[keybindings]
+  split_horiz = <Alt>S
+  split_vert  = <Alt>V
+  close_term  = <Alt>W
+  scaled_zoom = <Alt>F
+  zoom_in     = <Ctrl>plus
+  zoom_out    = <Ctrl>minus
+
+  go_left  = <Alt>H
+  go_down  = <Alt>J
+  go_up    = <Alt>K
+  go_right = <Alt>L
+
+# Colors
+[profiles]
+  [[default]]
+      use_system_font = False
+      font            = Monospace 14
+      background_type     = "transparent"
+      background_darkness = 0.9
+      foreground_color    = "#2EE5CB"
+      bold_color          = "#30B2A0"
+
+
+      palette = "#2E2E34343636:#CCCC00000000:#4E4E9A9A0606:#C4C4A0A00000:#34346565A4A4:#757550507B7B:#060698209A9A:#D3D3D7D7CFCF:#555557575353:#EFEF29292929:#8A8AE2E23434:#FCFCE9E94F4F:#72729F9FCFCF:#ADAD7F7FA8A8:#3434E2E2E2E2:#EEEEEEEEECEC"
+
+      scroll_on_output = False
+      scrollback_infinite = True
