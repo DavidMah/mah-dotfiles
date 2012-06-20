@@ -151,11 +151,12 @@ if uname -a | grep gnu; then
   PS1='\W$(__git_ps1 "(%s)") \u\$ ' # Git branch in PS1
 fi
 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
 # Put extra details that are by the machine into .bashrc_extra
 if [ -f ~/.bashrc_extra ]; then
     . ~/.bashrc_extra
 fi
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

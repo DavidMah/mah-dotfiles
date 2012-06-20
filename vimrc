@@ -114,11 +114,11 @@ cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
 " Unimpaired configuration
 " Bubble single lines
-nmap <C-Up> [e
-nmap <C-Down> ]e
+nmap <C-K> [e
+nmap <C-J> ]e
 " Bubble multiple lines
-vmap <C-Up> [egv
-vmap <C-Down> ]egv
+vmap <C-K> [egv
+vmap <C-J> ]egv
 
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
