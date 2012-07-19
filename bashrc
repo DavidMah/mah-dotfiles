@@ -115,7 +115,7 @@ alias gc="git checkout"
 alias gcomm="git commit"
 alias gb="git branch"
 alias gs="git status"
-alias gl="git log --pretty=format:\"%h%x09%an%x09%ad%x09%s\""
+alias gl="git log --graph --pretty=format:\"%h%x09%an%x09%ad%x09%s\""
 alias gd="git diff"
 alias greb="git rebase -i"
 alias gpush="git push origin"
@@ -128,7 +128,7 @@ complete -o default -o nospace -F _git_diff gd
 complete -o default -o nospace -F _git_push_origin gpush
 
 alias less="less -R"
-alias ssh_mahserver='gnome-terminal --window-with-profile=Rin -x bash -c "ssh -lubuntu davidpmah.com"; exit;'
+alias ssh_mahserver="ssh davidpmah.com"
 alias ssh_adpserver="ssh adp@dante.u.washington.edu"
 alias duckerberg="107.21.245.143"
 alias clipboard="xclip -selection clipboard"
@@ -150,6 +150,7 @@ gvim(){ setsid /usr/bin/gvim -f "$@"; }
 if uname -a | grep gnu; then
   PS1='\W$(__git_ps1 "(%s)") \u\$ ' # Git branch in PS1
 fi
+PS1="\033[34m$PS1\033[0m"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
@@ -159,4 +160,4 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 if [ -f ~/.bashrc_extra ]; then
     . ~/.bashrc_extra
 fi
-
+alias hlog='git log --date-order --all --graph --format="%C(green)%H %Creset%C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset %s"'
