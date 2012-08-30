@@ -23,7 +23,7 @@
 [profiles]
   [[default]]
       use_system_font = False
-      font            = Monospace 14
+      font            = Monospace 11
       background_type     = "transparent"
       background_darkness = 0.9
       foreground_color    = "#2EE5CB"
