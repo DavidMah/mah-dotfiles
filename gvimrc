@@ -1,5 +1,5 @@
 " Personal Settings
-set gfn=Monospace\ 14
+set gfn=Monospace\ 11
 
 " Default gui color scheme
 " color ir_black
