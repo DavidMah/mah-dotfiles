@@ -161,3 +161,12 @@ if [ -f ~/.bashrc_extra ]; then
     . ~/.bashrc_extra
 fi
 alias hlog='git log --date-order --all --graph --format="%C(green)%H %Creset%C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset %s"'
+
+##
+# Your previous /Users/mahhaha/.bash_profile file was backed up as /Users/mahhaha/.bash_profile.macports-saved_2012-09-02_at_09:36:55
+##
+
+# MacPorts Installer addition on 2012-09-02_at_09:36:55: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+

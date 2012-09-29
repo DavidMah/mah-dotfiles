@@ -10,8 +10,8 @@ setopt histignorealldups sharehistory
 bindkey -e
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
 # Use modern completion system
@@ -36,4 +36,44 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
+# ---------------
+# My own configuration starts here
+# ---------------
+
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+alias ls='ls --color=auto'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+alias chrome="google-chrome"
+alias nettest="ping wschurman.com"
+alias mvim="gvim"
+alias cdo="cd .."
+alias ..="cd .."
+
+alias rspecc="rspec -c"
+alias junit="java org.junit.runner.JUnitCore"
+alias diffc="colordiff"
+alias cdo="cd .."
+
+# git aliases
+alias gfp="git fetch && git pull"
+alias gc="git checkout"
+alias gcomm="git commit"
+alias gb="git branch"
+alias gs="git status"
+alias gl="git log --graph --pretty=format:\"%h%x09%an%x09%ad%x09%s\""
+alias gd="git diff"
+alias greb="git rebase -i"
+alias gpush="git push origin"
+
+alias clipboard="xclip -selection clipboard"
+
+source /usr/share/autojump/autojump.zsh
+
+# PS1='poop'
 
