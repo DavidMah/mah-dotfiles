@@ -3,7 +3,7 @@ set gfn=Monospace\ 11
 
 " Default gui color scheme
 " color ir_black
-color motus
+color solarized
 
 if has("gui_macvim")
 

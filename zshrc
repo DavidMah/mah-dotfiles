@@ -76,4 +76,3 @@ alias clipboard="xclip -selection clipboard"
 source /usr/share/autojump/autojump.zsh
 
 # PS1='poop'
-
