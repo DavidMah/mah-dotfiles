@@ -6,6 +6,14 @@ colorscheme colorer
 let mapleader='f'
 set wrap
 
+" Tab interfacing
+map T :tabnew<Enter>
+map <Leader>[ gT
+map <Leader>] gt
+
+" Use ; instead of :
+nnoremap ; :
+
 " Racket Scheme
 if has("autocmd")
   au BufReadPost *.rkt,*.rktl set filetype=scheme

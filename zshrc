@@ -1,3 +1,40 @@
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+# ZSH_THEME="random"
+
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Set to this to use case-sensitive completion
+# CASE_SENSITIVE="true"
+
+# Comment this out to disable weekly auto-update checks
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment following line if you want to disable colors in ls
+# DISABLE_LS_COLORS="true"
+
+# Uncomment following line if you want to disable autosetting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+# COMPLETION_WAITING_DOTS="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git) # rails rails3 python npm node ssh-agent)
+
+# source $ZSH/oh-my-zsh.sh
+
+# Customize to your needs...
+#
 # Set up the prompt
 
 autoload -Uz promptinit
@@ -75,4 +112,8 @@ alias clipboard="xclip -selection clipboard"
 
 source /usr/share/autojump/autojump.zsh
 
-# PS1='poop'
+# PROMPT="%K{purple}%n@%m%k %B%F{green}%56<...<%~%{%}%F{white} %# %b%f%k"
+
+PS1='%d%>:%{\e[0m%}' # default prompt
+PROMPT='%d%>:%{\e[0m%}' # default prompt
+RPROMPT='[%* on %D]' # prompt for right side of screen
