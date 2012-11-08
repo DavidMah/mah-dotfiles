@@ -2,6 +2,8 @@
 set noswapfile
 call pathogen#infect()
 
+set mouse=a
+
 colorscheme colorer
 let mapleader='f'
 set wrap

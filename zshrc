@@ -111,9 +111,12 @@ alias gpush="git push origin"
 alias clipboard="xclip -selection clipboard"
 
 source /usr/share/autojump/autojump.zsh
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
 # PROMPT="%K{purple}%n@%m%k %B%F{green}%56<...<%~%{%}%F{white} %# %b%f%k"
 
 PS1='%d%>:%{\e[0m%}' # default prompt
 PROMPT='%d%>:%{\e[0m%}' # default prompt
 RPROMPT='[%* on %D]' # prompt for right side of screen
+
+source ~/.zshrc_extra
