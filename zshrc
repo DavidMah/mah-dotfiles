@@ -120,3 +120,10 @@ PROMPT='%d%>:%{\e[0m%}' # default prompt
 RPROMPT='[%* on %D]' # prompt for right side of screen
 
 source ~/.zshrc_extra
+
+# Command not found recommendation
+if [[ -x /usr/lib/command-not-found ]] ; then
+	function command_not_found_handler() {
+		/usr/lib/command-not-found --no-failure-msg -- $1
+	}
+fi
