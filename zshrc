@@ -37,9 +37,9 @@ plugins=(git) # rails rails3 python npm node ssh-agent)
 #
 # Set up the prompt
 
-autoload -Uz promptinit
-promptinit
-prompt adam1
+# autoload -Uz promptinit
+# promptinit
+# prompt adam1
 
 setopt histignorealldups sharehistory
 
@@ -89,6 +89,7 @@ alias l='ls -CF'
 alias chrome="google-chrome"
 alias nettest="ping wschurman.com"
 alias mvim="gvim"
+alias ~="cd ~"
 alias cdo="cd .."
 alias ..="cd .."
 
@@ -96,6 +97,7 @@ alias rspecc="rspec -c"
 alias junit="java org.junit.runner.JUnitCore"
 alias diffc="colordiff"
 alias cdo="cd .."
+alias cdl="cd $1; ls"
 
 # git aliases
 alias gfp="git fetch && git pull"
@@ -113,11 +115,19 @@ alias clipboard="xclip -selection clipboard"
 source /usr/share/autojump/autojump.zsh
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
-# PROMPT="%K{purple}%n@%m%k %B%F{green}%56<...<%~%{%}%F{white} %# %b%f%k"
+PROMPT="%K{purple}%n@%m%k %B%F{green}%56<...<%~%{%}%F{white} %# %b%f%k"
 
-PS1='%d%>:%{\e[0m%}' # default prompt
-PROMPT='%d%>:%{\e[0m%}' # default prompt
-RPROMPT='[%* on %D]' # prompt for right side of screen
+# PS1='%d%>:%{\e[0m%} $' # default prompt
+# PS1='$ ' # default prompt
+# PROMPT='%d%>:%{\e[0m%} $' # default prompt
+# RPROMPT='[%* on %D]' # prompt for right side of screen
+
+# PS1="%K{blue}%n@%m%k %B%F{green}%137<...<%~
+# %}%F{white} %# %b%f%k"
+
+PS1="%B%F{cyan}%n@%m%k %B%F{green}%137<...<%~
+%}%F{white} %# %b%f%k"
+
 
 source ~/.zshrc_extra
 
