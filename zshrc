@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-# ZSH_THEME="random"
+ZSH_THEME="robbyrussell"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -14,8 +14,11 @@ ZSH=$HOME/.oh-my-zsh
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
-# Comment this out to disable weekly auto-update checks
+# Comment this out to disable bi-weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
+
+# Uncomment to change how many often would you like to wait before auto-updates occur? (in days)
+# export UPDATE_ZSH_DAYS=13
 
 # Uncomment following line if you want to disable colors in ls
 # DISABLE_LS_COLORS="true"
@@ -29,49 +32,13 @@ ZSH=$HOME/.oh-my-zsh
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git) # rails rails3 python npm node ssh-agent)
+plugins=(git)
 
-# source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-#
-# Set up the prompt
+export PATH=/home/mah/.rvm/gems/ruby-1.9.3-p286/bin:/home/mah/.rvm/gems/ruby-1.9.3-p286@global/bin:/home/mah/.rvm/rubies/ruby-1.9.3-p286/bin:/home/mah/.rvm/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 
-# autoload -Uz promptinit
-# promptinit
-# prompt adam1
-
-setopt histignorealldups sharehistory
-
-# Use emacs keybindings even if our EDITOR is set to vi
-bindkey -e
-
-# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=10000
-SAVEHIST=10000
-HISTFILE=~/.zsh_history
-
-# Use modern completion system
-autoload -Uz compinit
-compinit
-
-zstyle ':completion:*' auto-description 'specify: %d'
-zstyle ':completion:*' completer _expand _complete _correct _approximate
-zstyle ':completion:*' format 'Completing %d'
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*' menu select=2
-eval "$(dircolors -b)"
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
-zstyle ':completion:*' menu select=long
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle ':completion:*' use-compctl false
-zstyle ':completion:*' verbose true
-
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
-zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # ---------------
 # My own configuration starts here
@@ -113,29 +80,5 @@ alias gpush="git push origin"
 alias clipboard="xclip -selection clipboard"
 
 alias "rmrf"="rm -rfi"
-
+ 
 source /usr/share/autojump/autojump.zsh
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
-
-PROMPT="%K{purple}%n@%m%k %B%F{green}%56<...<%~%{%}%F{white} %# %b%f%k"
-
-# PS1='%d%>:%{\e[0m%} $' # default prompt
-# PS1='$ ' # default prompt
-# PROMPT='%d%>:%{\e[0m%} $' # default prompt
-# RPROMPT='[%* on %D]' # prompt for right side of screen
-
-# PS1="%K{blue}%n@%m%k %B%F{green}%137<...<%~
-# %}%F{white} %# %b%f%k"
-
-PS1="%B%F{cyan}%n@%m%k %B%F{green}%137<...<%~
-%}%F{white} %# %b%f%k"
-
-
-source ~/.zshrc_extra
-
-# Command not found recommendation
-if [[ -x /usr/lib/command-not-found ]] ; then
-	function command_not_found_handler() {
-		/usr/lib/command-not-found --no-failure-msg -- $1
-	}
-fi
