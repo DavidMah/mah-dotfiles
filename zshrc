@@ -112,6 +112,8 @@ alias gpush="git push origin"
 
 alias clipboard="xclip -selection clipboard"
 
+alias "rmrf"="rm -rfi"
+
 source /usr/share/autojump/autojump.zsh
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
