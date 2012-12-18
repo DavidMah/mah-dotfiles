@@ -9,3 +9,4 @@ ln -s $CONFIG_DIR/terminator ~/.terminator
 ln -s ~/.terminator ~/.config/terminator/config
 ln -s $CONFIG_DIR/bashrc ~/.bashrc
 ln -s $CONFIG_DIR/zshrc ~/.zshrc
+ln -s $CONFIG_DIR/oh-my-zsh ~/.oh-my-zsh

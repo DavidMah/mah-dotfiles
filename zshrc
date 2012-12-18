@@ -78,7 +78,16 @@ alias greb="git rebase -i"
 alias gpush="git push origin"
 
 alias clipboard="xclip -selection clipboard"
+alias meminfo="watch -n0.1 cat /proc/meminfo"
 
 alias "rmrf"="rm -rfi"
- 
+
+# Command not found recommendation
+if [[ -x /usr/lib/command-not-found ]] ; then
+	function command_not_found_handler() {
+		/usr/lib/command-not-found --no-failure-msg -- $1
+	}
+
+fi
+
 source /usr/share/autojump/autojump.zsh
