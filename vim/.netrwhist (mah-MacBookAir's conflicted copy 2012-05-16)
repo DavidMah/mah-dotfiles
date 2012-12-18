@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/mah/.vim'
+let g:netrw_dirhist_2='/home/mah/Programming/TA/14311fa/18 - LinkedListReview'
+let g:netrw_dirhist_3='/home/mah/.dropbox'
+let g:netrw_dirhist_4='/home/mah/Programming/Rymdskepp/server/spec'
+let g:netrw_dirhist_5='/home/mah/Dropbox'
+let g:netrw_dirhist_6='/home/mah/Programming/CS-Homework/331/cse331/src/hw4'
+let g:netrw_dirhist_7='/home/mah/Programming/rageriffic/app/views/rounds'
