@@ -92,3 +92,4 @@ if [[ -x /usr/lib/command-not-found ]] ; then
 fi
 
 source /usr/share/autojump/autojump.zsh
+source ~/.zshrc_extra
