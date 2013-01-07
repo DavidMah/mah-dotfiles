@@ -11,7 +11,7 @@ set wrap
 " Changing the size of the font
 let s:pattern = '^\(.* \)\([1-9][0-9]*\)$'
 let s:minfontsize = 6
-let s:maxfontsize = 16
+let s:maxfontsize = 34
 function! AdjustFontSize(amount)
   if has("gui_gtk2") && has("gui_running")
     let fontname = substitute(&guifont, s:pattern, '\1', '')
