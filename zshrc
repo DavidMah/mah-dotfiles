@@ -82,6 +82,7 @@ alias meminfo="watch -n0.1 cat /proc/meminfo"
 
 alias "rmrf"="rm -rfi"
 alias "getip"="curl ifconfig.me"
+alias "dnsflush"="sudo killall -HUP dnsmasq"
 
 # Command not found recommendation
 if [[ -x /usr/lib/command-not-found ]] ; then
