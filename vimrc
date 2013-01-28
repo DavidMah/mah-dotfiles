@@ -81,8 +81,11 @@ set smartcase
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+" https://github.com/gmarik/vundle
 Bundle 'gmarik/vundle'
+" https://github.com/mattn/webapi-vim
 Bundle 'mattn/webapi-vim'
+" https://github.com/mattn/gist-vim
 Bundle 'mattn/gist-vim'
 
 """""""""""""""""""""""""
