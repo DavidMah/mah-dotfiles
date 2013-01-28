@@ -170,3 +170,8 @@ alias hlog='git log --date-order --all --graph --format="%C(green)%H %Creset%C(y
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
+
+# Setting PATH for EPD_free-7.3-2
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
+export PATH

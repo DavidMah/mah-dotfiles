@@ -39,6 +39,8 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=/home/mah/.rvm/gems/ruby-1.9.3-p286/bin:/home/mah/.rvm/gems/ruby-1.9.3-p286@global/bin:/home/mah/.rvm/rubies/ruby-1.9.3-p286/bin:/home/mah/.rvm/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 
+unsetopt correct_all
+
 
 # ---------------
 # My own configuration starts here
@@ -92,5 +94,8 @@ if [[ -x /usr/lib/command-not-found ]] ; then
 
 fi
 
+# Todo List
+
+source /home/mah/Dropbox/todo/functions.sh
 source /usr/share/autojump/autojump.zsh
 source ~/.zshrc_extra
