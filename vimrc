@@ -1,4 +1,6 @@
-" Personal Settings
+"""""""""""""""""""""
+" Personal Settings "
+"""""""""""""""""""""
 set noswapfile
 call pathogen#infect()
 
@@ -8,7 +10,7 @@ colorscheme colorer
 let mapleader='f'
 set wrap
 
-" Changing the size of the font
+" GVim Font Size changing functions
 let s:pattern = '^\(.* \)\([1-9][0-9]*\)$'
 let s:minfontsize = 6
 let s:maxfontsize = 34
@@ -44,10 +46,10 @@ map T :tabnew<Enter>
 map <Leader>[ gT
 map <Leader>] gt
 
-" Use ; instead of :
+" ; to be the same as ;
 nnoremap ; :
 
-" Racket Scheme
+" Racket Scheme for .rkt and .rktl files
 if has("autocmd")
   au BufReadPost *.rkt,*.rktl set filetype=scheme
 endif
@@ -74,6 +76,18 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+
+" Vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
+
+"""""""""""""""""""""""""
+" Personal Settings End "
+"""""""""""""""""""""""""
 
 " Tab completion
 set wildmode=list:longest,list:full

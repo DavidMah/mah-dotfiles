@@ -366,33 +366,19 @@ endfunction " }}}
 
 " ExecuteAction(file, command) {{{
 function! eclim#tree#ExecuteAction(file, command)
-  let path = fnamemodify(a:file, ':h')
-  let path = substitute(path, '\', '/', 'g')
-
-  let file = fnamemodify(a:file, ':t')
+  let file = eclim#util#Simplify(a:file)
   let file = escape(file, ' &()')
   let file = escape(file, ' &()') " need to double escape
   let file = escape(file, '&') " '&' needs to be escaped 3 times.
 
-  let cwd = substitute(getcwd(), '\', '/', 'g')
-  " not using lcd, because the executed command may change windows.
-  if has('win32unix')
-    let path = eclim#cygwin#CygwinPath(path)
-  endif
-  silent exec 'cd ' . escape(path, ' &#')
-  try
-    let command = a:command
-    let command = substitute(command, '<file>', file, 'g')
-    let command = substitute(command, '<cwd>', cwd, 'g')
-    if command =~ '^!\w'
-      silent call eclim#util#Exec(command)
-    else
-      call eclim#util#Exec(command)
-    endif
+  let command = a:command
+  let command = substitute(command, '<file>', file, 'g')
+  if command =~ '^!\w'
+    silent call eclim#util#Exec(command)
     redraw!
-  finally
-    silent exec 'cd ' . escape(cwd, ' &')
-  endtry
+  else
+    exec command
+  endif
 
   if command =~ '^!\w' && v:shell_error
     call eclim#util#EchoError('Error executing command: ' . command)
@@ -1009,9 +995,11 @@ function! eclim#tree#ListDir(dir, ...)
     endif
     let contents = split(eclim#util#System(ls . " '" . a:dir . "'"), '\n')
     if !b:view_hidden && &wildignore != ''
-      let pattern = substitute(escape(&wildignore, '.'), '\*', '.*', 'g')
+      let pattern = substitute(escape(&wildignore, '.~'), '\*', '.*', 'g')
       let pattern = '\(' . join(split(pattern, ','), '\|') . '\)$'
-      call filter(contents, 'v:val !~ pattern')
+      " Note: symlinks have a trailing @, so remove that before comparing
+      " against pattern
+      call filter(contents, 'substitute(v:val, "@$", "", "") !~ pattern')
     endif
     call map(contents, 'a:dir . v:val')
   else

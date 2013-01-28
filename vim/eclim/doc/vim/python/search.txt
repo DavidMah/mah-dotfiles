@@ -1,6 +1,5 @@
 *vim-python-search*
 
-
 Python Search
 *************
 
@@ -21,10 +20,6 @@ single result matches, the value of |g:EclimPythonSearchSingleResult|
 will be consulted for the action to take.  If there are multiple
 results, the location list will be opened with the list of results.
 
-Note: Searching support is provided via eclim's integration with rope
-  (|vim-python-rope|).Please see the rope (|vim-python-rope|) docs for
-  more information.
-
 *:PythonSearchContext*
 
 As a convenience eclim also provides the command :PythonSearchContext.
@@ -40,7 +35,7 @@ search depending on the context of the element.
 Configuration
 =============
 
-Vim Variables
+Vim Settings (|vim-settings|)
 
 *g:EclimPythonSearchSingleResult*
 
