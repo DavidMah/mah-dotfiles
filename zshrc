@@ -79,12 +79,16 @@ alias gd="git diff"
 alias greb="git rebase -i"
 alias gpush="git push origin"
 
+alias hg='LANGUAGE="en_US.UTF_8" hg'
+
 alias clipboard="xclip -selection clipboard"
 alias meminfo="watch -n0.1 cat /proc/meminfo"
 
 alias "rmrf"="rm -rfi"
 alias "getip"="curl ifconfig.me"
 alias "dnsflush"="sudo killall -HUP dnsmasq"
+
+alias sl="sl"
 
 # Command not found recommendation
 if [[ -x /usr/lib/command-not-found ]] ; then
