@@ -12,17 +12,13 @@ set wrap
 
 " GVim Font Size changing functions
 let s:pattern = '^\(.* \)\([1-9][0-9]*\)$'
-let s:minfontsize = 6
-let s:maxfontsize = 34
 function! AdjustFontSize(amount)
   if has("gui_gtk2") && has("gui_running")
     let fontname = substitute(&guifont, s:pattern, '\1', '')
     let cursize = substitute(&guifont, s:pattern, '\2', '')
-    let newsize = cursize + a:amount
-    if (newsize >= s:minfontsize) && (newsize <= s:maxfontsize)
-      let newfont = fontname . newsize
-      let &guifont = newfont
-    endif
+    let newsize = cursize + (2 * a:amount)
+    let newfont = fontname . newsize
+    let &guifont = newfont
   else
     echoerr "You need to run the GTK2 version of Vim to use this function."
   endif
@@ -47,12 +43,18 @@ map <Leader>[ gT
 map <Leader>] gt
 
 " ; to be the same as ;
-nnoremap ; :
+" nnoremap ; :
 
-" Racket Scheme for .rkt and .rktl files
-if has("autocmd")
-  au BufReadPost *.rkt,*.rktl set filetype=scheme
-endif
+" Dealing with HTML.vim
+" Don't ruin semicolon
+:let g:html_map_leader = '\'
+" Don't insert all caps tags
+:let g:html_tag_case = 'lowercase'
+" Don't let html.vim override anything else
+:let g:no_html_map_override = 'yes'
+" What is this toolbar I do not want it
+:let g:no_html_toolbar = 'yes'
+
 
 set nocompatible
 
@@ -71,6 +73,9 @@ set softtabstop=2
 set expandtab
 set list listchars=tab:\ \ ,trail:·
 
+" Change method of autocompletion
+set wildmode=longest,list:longest
+
 " Searching
 set hlsearch
 set incsearch
@@ -87,6 +92,14 @@ Bundle 'gmarik/vundle'
 Bundle 'mattn/webapi-vim'
 " https://github.com/mattn/gist-vim
 Bundle 'mattn/gist-vim'
+
+if has("autocmd")
+  " Racket Scheme for .rkt and .rktl files
+  au BufReadPost *.rkt,*.rktl set filetype=scheme
+  " Scala for using tabs
+  " au BufReadPost *.scala set noexpandtab
+  " au BufReadPost *.scala set tabstop=2
+endif
 
 """""""""""""""""""""""""
 " Personal Settings End "
