@@ -47,7 +47,16 @@ unsetopt correct_all
 # My own configuration starts here
 # ---------------
 
-PROMPT="%{$fg_bold[cyan]%}%n (%{$fg_bold[cyan]%}%m%{$reset_color%})%{$fg[red]%} ➜ %{$reset_color%}"
+# Add (SSH) to prompt if we are connected by ssh
+if [[ -z "$SSH_CLIENT" ]]; then
+  ssh_prompt=""
+else
+  ssh_prompt=" (%{$fg_bold[red]%}SSH%{$reset_color%})"
+fi
+
+dir_prompt=" [%3c]"
+
+PROMPT="%{$fg_bold[cyan]%}%n@%{$fg_bold[cyan]%}%m%{$reset_color%}$ssh_prompt$dir_prompt %{$fg[red]%}➜%{$reset_color%} "
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
