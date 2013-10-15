@@ -41,6 +41,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/home/mah/.rvm/gems/ruby-1.9.3-p286/bin:/home/mah/.rvm/gems/ruby-1.9.3-p286@global/bin:/home/mah/.rvm/rubies/ruby-1.9.3-p286/bin:/home/mah/.rvm/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 
 unsetopt correct_all
+unsetopt share_history
 
 
 # ---------------

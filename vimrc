@@ -100,6 +100,7 @@ if has("autocmd")
   " au BufReadPost *.scala set noexpandtab
   " au BufReadPost *.scala set tabstop=2
 endif
+au BufNewFile,BufRead *.ejs set filetype=html
 
 """""""""""""""""""""""""
 " Personal Settings End "

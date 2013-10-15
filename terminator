@@ -19,13 +19,21 @@
   go_up    = <Alt>K
   go_right = <Alt>L
 
+  resize_up    = <Ctrl><Shift>K
+  resize_down  = <Ctrl><Shift>J
+  resize_left  = <Ctrl><Shift>H
+  resize_right = <Ctrl><Shift>L
+
+  next_tab = <Ctrl><Shift>P
+  prev_tab = <Ctrl><Shift>O
+
 # Colors
 [profiles]
   [[default]]
       use_system_font = False
       font            = Monospace 11
       background_type     = "transparent"
-      background_darkness = 0.9
+      background_darkness = 0.90
       foreground_color    = "#2EE5CB"
       bold_color          = "#30B2A0"
 

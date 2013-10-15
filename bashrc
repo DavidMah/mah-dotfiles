@@ -175,3 +175,5 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # The orginal version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
 export PATH
+export PATH=/home/mah/Documents/pwntools/bin:$PATH
+export PYTHONPATH=/home/mah/Documents/pwntools/lib:$PYTHONPATH
