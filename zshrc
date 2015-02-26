@@ -121,3 +121,5 @@ source ~/.zshrc_extra
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+. /usr/share/autojump/autojump.sh
